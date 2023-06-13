@@ -24,9 +24,11 @@ export class QuizService {
     // console.log("API Url: ", this.apiBaseUrl);
     console.log(this.apiBaseUrl + '/api_category.php');
     return this.http.get<Category>(this.apiBaseUrl + '/api_category.php', { headers: this.headers })
-      .pipe(timeout(this.timeOut))
-      .pipe(retry(3))
-      .pipe(catchError(this.processHttpMsg.handleError));
+      .pipe(
+        timeout(this.timeOut),
+        retry(3),
+        catchError(this.processHttpMsg.handleError)
+      );
   }
 
   getQuizQuestions(amount: number, catId: number, difficulty: string, type: string): Observable<QuizQuestion> {
@@ -34,9 +36,11 @@ export class QuizService {
     let reqParameters = `amount=${amount}&category=${catId}&difficulty=${difficulty}&type=${type}`;
     console.log(this.apiBaseUrl + `/api.php?${reqParameters}`);
     return this.http.get<QuizQuestion>(this.apiBaseUrl + `/api.php?${reqParameters}`, { headers: this.headers })
-      .pipe(timeout(this.timeOut))
-      .pipe(retry(3))
-      .pipe(catchError(this.processHttpMsg.handleError));
+      .pipe(
+        timeout(this.timeOut),
+        retry(3),
+        catchError(this.processHttpMsg.handleError)
+      );
   }
 
 }

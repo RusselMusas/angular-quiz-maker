@@ -49,18 +49,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AppModule": () => (/* binding */ AppModule)
 /* harmony export */ });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser */ 4497);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common/http */ 8987);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/forms */ 2508);
-/* harmony import */ var _modules_app_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/app-routing.module */ 4578);
-/* harmony import */ var _services_process_httpmsg_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/process-httpmsg.service */ 9899);
-/* harmony import */ var _services_quiz_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/quiz.service */ 4993);
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ 5041);
-/* harmony import */ var _components_quiz_results_quiz_results_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/quiz-results/quiz-results.component */ 758);
-/* harmony import */ var _components_quiz_questions_quiz_questions_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/quiz-questions/quiz-questions.component */ 9103);
-/* harmony import */ var _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/not-found/not-found.component */ 1828);
-/* harmony import */ var _pipes_decode_html_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pipes/decode-html.pipe */ 7604);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/platform-browser */ 4497);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ 8987);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/forms */ 2508);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var _services_process_httpmsg_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./services/process-httpmsg.service */ 9899);
+/* harmony import */ var _services_quiz_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/quiz.service */ 4993);
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ 5041);
+/* harmony import */ var _components_quiz_results_quiz_results_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/quiz-results/quiz-results.component */ 758);
+/* harmony import */ var _components_quiz_questions_quiz_questions_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/quiz-questions/quiz-questions.component */ 9103);
+/* harmony import */ var _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/not-found/not-found.component */ 1828);
+/* harmony import */ var _pipes_decode_html_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pipes/decode-html.pipe */ 7604);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ 2560);
 
 
 
@@ -73,22 +73,40 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+const routes = [{
+  path: '',
+  redirectTo: '/questions',
+  pathMatch: 'full'
+}, {
+  path: 'questions',
+  component: _components_quiz_questions_quiz_questions_component__WEBPACK_IMPORTED_MODULE_4__.QuizQuestionsComponent
+}, {
+  path: 'results',
+  component: _components_quiz_results_quiz_results_component__WEBPACK_IMPORTED_MODULE_3__.QuizResultsComponent
+}, {
+  path: 'not-found',
+  component: _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_5__.NotFoundComponent
+}, {
+  path: '**',
+  redirectTo: '/not-found'
+}];
 class AppModule {}
 AppModule.ɵfac = function AppModule_Factory(t) {
   return new (t || AppModule)();
 };
-AppModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineNgModule"]({
+AppModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineNgModule"]({
   type: AppModule,
-  bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__.AppComponent]
+  bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent]
 });
-AppModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵdefineInjector"]({
-  providers: [_services_process_httpmsg_service__WEBPACK_IMPORTED_MODULE_1__.ProcessHttpmsgService, _services_quiz_service__WEBPACK_IMPORTED_MODULE_2__.QuizService],
-  imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.BrowserModule, _modules_app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.ReactiveFormsModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__.HttpClientModule]
+AppModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵdefineInjector"]({
+  providers: [_services_process_httpmsg_service__WEBPACK_IMPORTED_MODULE_0__.ProcessHttpmsgService, _services_quiz_service__WEBPACK_IMPORTED_MODULE_1__.QuizService],
+  imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.BrowserModule, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.ReactiveFormsModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__.HttpClientModule, _angular_router__WEBPACK_IMPORTED_MODULE_11__.RouterModule.forRoot(routes)]
 });
 (function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_8__["ɵɵsetNgModuleScope"](AppModule, {
-    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__.AppComponent, _components_quiz_results_quiz_results_component__WEBPACK_IMPORTED_MODULE_4__.QuizResultsComponent, _components_quiz_questions_quiz_questions_component__WEBPACK_IMPORTED_MODULE_5__.QuizQuestionsComponent, _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_6__.NotFoundComponent, _pipes_decode_html_pipe__WEBPACK_IMPORTED_MODULE_7__.DecodeHtml],
-    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_9__.BrowserModule, _modules_app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_10__.ReactiveFormsModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_11__.HttpClientModule]
+  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵsetNgModuleScope"](AppModule, {
+    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__.AppComponent, _components_quiz_results_quiz_results_component__WEBPACK_IMPORTED_MODULE_3__.QuizResultsComponent, _components_quiz_questions_quiz_questions_component__WEBPACK_IMPORTED_MODULE_4__.QuizQuestionsComponent, _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_5__.NotFoundComponent, _pipes_decode_html_pipe__WEBPACK_IMPORTED_MODULE_6__.DecodeHtml],
+    imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_8__.BrowserModule, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.FormsModule, _angular_forms__WEBPACK_IMPORTED_MODULE_9__.ReactiveFormsModule, _angular_common_http__WEBPACK_IMPORTED_MODULE_10__.HttpClientModule, _angular_router__WEBPACK_IMPORTED_MODULE_11__.RouterModule]
   });
 })();
 
@@ -779,63 +797,6 @@ QuizResultsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE
 
 /***/ }),
 
-/***/ 4578:
-/*!***********************************************!*\
-  !*** ./src/app/modules/app-routing.module.ts ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "AppRoutingModule": () => (/* binding */ AppRoutingModule)
-/* harmony export */ });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ 124);
-/* harmony import */ var _components_quiz_questions_quiz_questions_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/quiz-questions/quiz-questions.component */ 9103);
-/* harmony import */ var _components_quiz_results_quiz_results_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/quiz-results/quiz-results.component */ 758);
-/* harmony import */ var _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/not-found/not-found.component */ 1828);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2560);
-
-
-
-
-
-
-const routes = [{
-  path: '',
-  redirectTo: '/questions',
-  pathMatch: 'full'
-}, {
-  path: 'questions',
-  component: _components_quiz_questions_quiz_questions_component__WEBPACK_IMPORTED_MODULE_0__.QuizQuestionsComponent
-}, {
-  path: 'results',
-  component: _components_quiz_results_quiz_results_component__WEBPACK_IMPORTED_MODULE_1__.QuizResultsComponent
-}, {
-  path: 'not-found',
-  component: _components_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_2__.NotFoundComponent
-}, {
-  path: '**',
-  redirectTo: '/not-found'
-}];
-class AppRoutingModule {}
-AppRoutingModule.ɵfac = function AppRoutingModule_Factory(t) {
-  return new (t || AppRoutingModule)();
-};
-AppRoutingModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
-  type: AppRoutingModule
-});
-AppRoutingModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({
-  imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule.forRoot(routes), _angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
-});
-(function () {
-  (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](AppRoutingModule, {
-    imports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule],
-    exports: [_angular_router__WEBPACK_IMPORTED_MODULE_4__.RouterModule]
-  });
-})();
-
-/***/ }),
-
 /***/ 7604:
 /*!*******************************************!*\
   !*** ./src/app/pipes/decode-html.pipe.ts ***!
@@ -953,7 +914,7 @@ class QuizService {
     console.log(this.apiBaseUrl + '/api_category.php');
     return this.http.get(this.apiBaseUrl + '/api_category.php', {
       headers: this.headers
-    }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.timeout)(this.timeOut)).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_4__.retry)(3)).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_5__.catchError)(this.processHttpMsg.handleError));
+    }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.timeout)(this.timeOut), (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.retry)(3), (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.catchError)(this.processHttpMsg.handleError));
   }
   getQuizQuestions(amount, catId, difficulty, type) {
     // console.log("API Url: ", this.apiBaseUrl);
@@ -961,7 +922,7 @@ class QuizService {
     console.log(this.apiBaseUrl + `/api.php?${reqParameters}`);
     return this.http.get(this.apiBaseUrl + `/api.php?${reqParameters}`, {
       headers: this.headers
-    }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.timeout)(this.timeOut)).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_4__.retry)(3)).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_5__.catchError)(this.processHttpMsg.handleError));
+    }).pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.timeout)(this.timeOut), (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.retry)(3), (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.catchError)(this.processHttpMsg.handleError));
   }
 }
 QuizService.ɵfac = function QuizService_Factory(t) {
@@ -1015,4 +976,4 @@ _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__.platformBrowser().bootstr
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=main.fdf37285b5b2f0e1.js.map
+//# sourceMappingURL=main.1fe03c847781b518.js.map
