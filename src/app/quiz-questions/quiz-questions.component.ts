@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { Category } from 'src/app/models/category.model';
-import { QuizQuestion, Result } from 'src/app/models/quiz-question.model';
-import { QuizService } from 'src/app/services/quiz.service';
+import { Category } from 'src/app/core/models/category.model';
+import { QuizQuestion, Result } from 'src/app/core/models/quiz-question.model';
+import { QuizService } from 'src/app/core/services/quiz.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 

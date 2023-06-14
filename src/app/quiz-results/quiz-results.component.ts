@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormResponse, QuizQuestion, Result } from 'src/app/models/quiz-question.model';
+import { FormResponse, QuizQuestion, Result } from 'src/app/core/models/quiz-question.model';
 
 @Component({
   selector: 'app-quiz-results',
